@@ -22,7 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace VersatileHeritages.Dhampir;
+namespace Dawnsbury.Mods.VersatileHeritages.DhampirHeritage;
 
 public class Dhampir
 {
