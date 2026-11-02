@@ -1,9 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <TargetFramework>net10.0-windows</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
 
   <ItemGroup>
@@ -16,6 +17,14 @@
     <Reference Include="MonoGame.Framework">
       <HintPath>G:\Steam\steamapps\common\Dawnsbury Days\Data\MonoGame.Framework.dll</HintPath>
     </Reference>
+	<Reference Include="0Harmony">
+		<HintPath>G:\Steam\steamapps\common\Dawnsbury Days\Data\0Harmony.dll</HintPath>
+		<Private>false</Private>
+	</Reference>
   </ItemGroup>
+
+<Target Name="CopyToGameModsFolder" AfterTargets="Build">
+	<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(Dawnsbury)/CustomMods" />
+</Target>
 
 </Project>
